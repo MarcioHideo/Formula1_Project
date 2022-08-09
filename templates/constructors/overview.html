@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+{% block content %}
+<h1>Constructor View</h1>
+<p>Hello, {{ name }}. It's not you? <a href="{{ url_for('.logout') }}">logout</a></p>
+<h2>Overview</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Information</th>
+        <th>Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Number of victories</td>
+        <td>{{ count_victories }}</td>
+    </tr>
+    <tr>
+        <td>Number of drivers</td>
+        <td>{{ count_drivers }}</td>
+    </tr>
+    <tr>
+        <td>Active date range</td>
+        <td>{{ start_year }}-{{ end_year }}</td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Actions</h2>
+<a href="{{ url_for('.search_drivers') }}"> <button>Search drivers</button> </a>
+<a  href="{{ url_for('.constructor_reports') }}"> <button>Go to reports</button> </a>
+
+{% endblock %}
+
